@@ -48,7 +48,7 @@ public class ServerChat {
 				clientSocket = serverSocket.accept();
 				logger.info("got a connection");
 
-				Thread eachClientThread = new Thread(new ClientController(this));
+				Thread eachClientThread = new Thread(new ServerController(this));
 				eachClientThread.start();
 			}
 		} catch (SocketException e) {

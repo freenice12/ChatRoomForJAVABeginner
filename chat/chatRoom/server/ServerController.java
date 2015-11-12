@@ -20,7 +20,7 @@ import chatRoom.model.DataModel;
 import chatRoom.model.ProtocolEnum;
 import chatRoom.mybatis.ContentsDao;
 
-public class ClientController implements Runnable {
+public class ServerController implements Runnable {
 	private Socket clientSocket;
 	private InputStream inputStream;
 	private ObjectInputStream objectInputStream;
@@ -34,9 +34,9 @@ public class ClientController implements Runnable {
 //	private MybatisConnector mybatisConnector;	
 	private ContentsDao contentsDao;
 
-	private Logger logger = Logger.getLogger(ClientController.class);
+	private Logger logger = Logger.getLogger(ServerController.class);
 
-	public ClientController(ServerChat serverChat) {
+	public ServerController(ServerChat serverChat) {
 		chatRoomList = serverChat.getChatManager().getChatRoomList();
 		totalClientList = serverChat.getChatManager().getTotalClientList();
 		contentsManager = serverChat.getContentsManager();

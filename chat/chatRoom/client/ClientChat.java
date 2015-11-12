@@ -235,6 +235,9 @@ public class ClientChat {
 	private void sendWhisperMessage(String title,
 			StringTokenizer messageTokenizer) {
 		String receiverId = messageTokenizer.nextToken();
+		while (!chatRoomFrame.clientIdListModel.contains(receiverId)) {
+			receiverId += " "+messageTokenizer.nextToken();
+		}
 		String whisperMessage = messageTokenizer.nextToken("\n").trim();
 		
 		DataModel data = new DataModel(ProtocolEnum.WHISPERTOCLIENT);

@@ -12,7 +12,7 @@ public class ChatRoomFrame extends JFrame {
 	protected JTextArea showChatTextArea;
 	private JTextArea showClientIdTextArea;
 	protected JTextField messageField;
-	private DefaultListModel<String> clientIdListModel;
+	protected DefaultListModel<String> clientIdListModel;
 	protected JList<String> clientIdList;
 
 	public ChatRoomFrame(ClientChat clientChat, String[] clientArr) {
